@@ -8,7 +8,7 @@
 
 ## 0. Overview
 
-Transport for London (TfL) is the local government body, established in 2000 and managed by the Mayor of London's office, responsible for London's road network, taxis, and public transport — including the Underground, Overground, Docklands Light Railway (DLR), buses, trams, river services, and the Emirates Airline cable car.
+Transport for London (TFL) is the local government body, established in 2000 and managed by the Mayor of London's office, responsible for London's road network, taxis, and public transport — including the Underground, Overground, Docklands Light Railway (DLR), buses, trams, river services, and the Emirates Airline cable car.
 
 ![London Underground train departing a platform](tube.jpg)
 
