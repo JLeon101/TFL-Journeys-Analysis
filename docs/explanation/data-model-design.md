@@ -2,7 +2,7 @@
 
 > Understand why TFL Journeys Analysis uses one wide Snowflake table instead of a star schema, and when GROUP BY ALL is appropriate for exploratory SQL.
 
-The TfL Journeys Analysis is built on a deliberate structural choice: a single Snowflake table rather than a normalised schema with dimension and fact tables. Understanding that decision — and the related choice to use `GROUP BY ALL` — helps you reason about when the same pattern is right for your own projects, and when it is not.
+The TFL Journeys Analysis is built on a deliberate structural choice: a single Snowflake table rather than a normalised schema with dimension and fact tables. Understanding that decision — and the related choice to use `GROUP BY ALL` — helps you reason about when the same pattern is right for your own projects, and when it is not.
 
 ## One table, no joins
 
