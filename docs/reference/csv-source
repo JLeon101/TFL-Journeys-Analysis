@@ -1,0 +1,48 @@
+# tfl_journeys_final.csv: Full Source Data File Specification
+
+> Structure, column definitions, row count, and date format for the tfl_journeys_final.csv extract used to populate the TFL.JOURNEYS Snowflake table.
+
+`tfl_journeys_final.csv` is the raw source extract used to populate `TFL.JOURNEYS`. It can also be used directly for local analysis via pandas, without requiring a Snowflake connection.
+
+## File Specification
+
+| Property | Value |
+|---|---|
+| Rows | 935 data rows (plus one header row) |
+| Columns | 6 |
+| Encoding | UTF-8 |
+| Date format | MM/DD/YYYY (for `report_date`) |
+
+## Column Reference
+
+| Column | Description |
+|---|---|
+| month | Month number (1–12) |
+| year | Calendar year |
+| days | Number of days in the month |
+| report_date | Reporting date, stored as MM/DD/YYYY |
+| journey_type | Transport mode |
+| journeys_millions | Journey volume in millions |
+
+> [!NOTE]
+> CSV column names are lower-case. Snowflake upper-cases them on ingestion, mapping to `MONTH`, `YEAR`, `DAYS`, `REPORT_DATE`, `JOURNEY_TYPE`, and `JOURNEYS_MILLIONS` in `TFL.JOURNEYS`.
+
+## Loading with pandas
+
+Use explicit `dtype` mapping so that `month`, `year`, and `days` are not inferred as floats, and pass `report_date` to `parse_dates` for proper date handling:
+
+```python
+import pandas as pd
+
+df = pd.read_csv(
+    "tfl_journeys_final.csv",
+    dtype={"month": "int64", "year": "int64", "days": "int64", "journey_type": "string"},
+    parse_dates=["report_date"],
+)
+```
+
+For detailed loading instructions, see [Loading CSV Data](../guides/loading-csv-data.md).
+
+## Data Provenance
+
+This is a modified extract of TfL usage statistics from the Mayor of London's open data portal at [data.london.gov.uk](https://data.london.gov.uk/dataset). Treat exact totals as indicative rather than authoritative for anything beyond exploratory analysis; for citations or downstream reporting, refer back to the original source.
