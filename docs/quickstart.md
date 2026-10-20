@@ -1,4 +1,4 @@
-# Quickstart: Run the TfL Journey Analysis End to End
+# Quickstart: Run the TFL Journey Analysis End to End
 
 > Connect to the TFL Snowflake database, inspect the JOURNEYS table, and execute all three SQL analyses to reproduce every result in this project.
 
